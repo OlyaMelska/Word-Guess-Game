@@ -1,3 +1,51 @@
-* {
+body {
     background: lightblue;
+    margin: 0;
+    text-align: center;
+}
+
+main {
+    display: block;
+    align-content: center;
+    margin-left: 200px;
+    margin-top: 50px;
+}
+
+.container {
+    display: grid;
+    grid-template: 1fr/1fr 1fr;
+    justify-self: center;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.left-box {
+    grid-row: 1;
+    grid-column: 1;
+    justify-self: center;
+    border: 2px solid red;
+}
+
+#key {
+    background: #fff;
+}
+
+.right-box {
+    grid-row: 1;
+    grid-column: 2;
+    justify-self: center;
+    border: 2px solid pink;
+}
+
+#image {
+    width: 70%;
+    height: 70%;
+}
+
+footer {
+    display: block;
+    align-content: center;
+    position: absolute;
+    padding-bottom: 40px;
+    bottom: 0;
 }
