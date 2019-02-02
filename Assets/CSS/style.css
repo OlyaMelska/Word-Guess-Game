@@ -22,6 +22,22 @@ header {
     font-family: 'Julius Sans One', sans-serif;
 }
 
+#correctAnswer {
+    background: -webkit-linear-gradient( #ebfeff, #b7f4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 36px;
+}
+
+main {
+    margin-top: 10px;
+}
+
+#play {
+    width: 50px;
+    height: 50px;
+}
+
 #start-key {
     background: -webkit-linear-gradient(#cef7f3, #a6e719);
     -webkit-background-clip: text;

@@ -5,6 +5,8 @@ let displayWord = document.getElementById("word");
 let key = document.getElementById("key");
 let remainingGuesses = document.getElementById("remaining-guesses");
 let guessedLetters = document.getElementById("guessed-letters");
+let correctAnswer = document.getElementById("correctAnswer");
+let play = document.getElementById("play");
 let word;
 let letter;
 let winsCount = 0;
@@ -15,7 +17,7 @@ let outputString = [];
 
 let data = [
   {
-    song: "Pray",
+    song: "Prey",
     artist: "The Neighbourhood",
     imgURL: "./Assets/Images/theneighbourhood.jpg"
   },
@@ -40,7 +42,7 @@ let data = [
     imgURL: "./Assets/Images/snoopdog.jpg"
   },
   {
-    song: "High by the Beach",
+    song: "High by the beach",
     artist: "Lana Del Ray",
     imgURL: "./Assets/Images/lanadelrey.jpg"
   },
@@ -96,8 +98,10 @@ function winTheGame(value) {
   if (value === word.toLowerCase()) {
     winsCount++;
     wins.textContent = winsCount;
+    correctAnswer.innerHTML =
+      'Song "' + data[number].song + '" by ' + data[number].artist + "!";
     setNewWord();
-    totalGuesses = 12;
+    totalGuesses = 18;
     pressedLetters = [];
   } else {
     return false;
