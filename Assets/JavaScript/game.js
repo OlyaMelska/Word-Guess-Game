@@ -118,6 +118,7 @@ function winTheGame(value) {
     setNewWord();
     totalGuesses = 18;
     pressedLetters = [];
+    guessesArray = [];
   } else {
     return false;
   }
