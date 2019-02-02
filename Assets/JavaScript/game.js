@@ -9,6 +9,7 @@ let correctAnswer = document.getElementById("correctAnswer");
 let musicVideo = document.getElementById("play");
 let word;
 let letter;
+let number;
 let winsCount = 0;
 let totalGuesses = 18;
 let pressedLetters = [];
@@ -56,14 +57,20 @@ let data = [
     song: "Kids",
     artist: "MGMT",
     imgURL: "./Assets/Images/mgmt.jpg",
-    videoURL: "https://www.youtube.com/embed/GCdwKhTtNNw"
+    videoURL: "https://www.youtube.com/embed/fe4EK4HSPkI"
   }
 ];
 
 let generateRandom = value => Math.floor(Math.random() * value); // function that generates a random number - that would be an index of an object in our array "data"
 
 function setNewWord() {
+  let oldNumber = -1;
   number = generateRandom(data.length);
+  if (number === oldNumber) {
+    number = generateRandom(data.length);
+    oldNumber = number;
+  }
+
   word = data[number].song;
   image.setAttribute("src", data[number].imgURL);
   console.log(word);
@@ -77,7 +84,6 @@ function setNewWord() {
 
   console.log(displayWord);
 }
-setNewWord();
 
 function checkLetter(letter) {
   let letterIndex = word.toLowerCase().indexOf(letter);
@@ -118,17 +124,25 @@ function winTheGame(value) {
 }
 remainingGuesses.textContent = totalGuesses;
 
+setNewWord();
+
+let guessesArray = [];
+
 window.addEventListener("keydown", event => {
   if (totalGuesses > 0) {
-    key.textContent = event.key;
-    letter = event.key;
-    totalGuesses--;
-    outputString = checkLetter(letter);
-    winTheGame(outputString);
+    if (guessesArray.includes(event.key)) {
+    } else if (!guessesArray.includes(event.key)) {
+      key.textContent = event.key;
+      letter = event.key;
+      guessesArray.push(letter);
+      totalGuesses--;
+      outputString = checkLetter(letter);
+      winTheGame(outputString);
+    }
   } else {
     alert("You LOST!!!");
     setNewWord();
-    totalGuesses = 12;
+    totalGuesses = 18;
     guessedLetters.textContent = "";
   }
   remainingGuesses.textContent = totalGuesses;
