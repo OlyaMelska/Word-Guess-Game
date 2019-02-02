@@ -64,87 +64,93 @@ let data = [
 let generateRandom = value => Math.floor(Math.random() * value); // function that generates a random number - that would be an index of an object in our array "data"
 
 function setNewWord() {
+  //generates a new word from data array
   let oldNumber = -1;
   number = generateRandom(data.length);
   if (number === oldNumber) {
+    //to make sure we don't randomly generate duplicates
     number = generateRandom(data.length);
     oldNumber = number;
   }
 
-  word = data[number].song;
-  image.setAttribute("src", data[number].imgURL);
+  word = data[number].song; //getting the value that use has to guess
+  image.setAttribute("src", data[number].imgURL); //output of the image
   console.log(word);
-  string = [""];
+  string = [""]; //array for output on the screen
 
   for (let i = 0; i < word.length; i++) {
     string[i] = "_ ";
   }
-  displayWord.textContent = string.join("");
+  displayWord.textContent = string.join(""); //to make the output without ","
   guessedLetters.textContent = "";
-
-  console.log(displayWord);
 }
 
 function checkLetter(letter) {
-  let letterIndex = word.toLowerCase().indexOf(letter);
+  //checks if the letter is in the guessing word
+  let letterIndex = word.toLowerCase().indexOf(letter); //case sensitive, so have to make all the words lower case
   if (letterIndex > -1) {
+    // if the letter has grater value than -1, meaning it is in a word string
     while (letterIndex >= 0) {
-      string[letterIndex] = letter;
+      //for all indexes where the letter appears
+      string[letterIndex] = letter; //add it to a string array
       displayWord.textContent = string.join("");
       letterIndex = word.indexOf(letter, letterIndex + 1);
     }
-    alreadyPressedLetters(letter);
-    return string;
+    alreadyPressedLetters(letter); //output of the correctly guessed letters
+    return string; //returns an array to check with initially generated word
   } else {
     return false;
   }
 }
 
 function alreadyPressedLetters(letter) {
+  //outputs guessed letters on the screen
   pressedLetters.push(letter.toUpperCase());
   guessedLetters.textContent = pressedLetters.join(" ");
   return pressedLetters;
 }
 
 function winTheGame(value) {
-  value = value.toString().replace(/,/g, "");
+  //checks if value is equal to generated word
+  value = value.toString().replace(/,/g, ""); //converting an array to a string & removing all ','
   if (value === word.toLowerCase()) {
+    //if it matches
     winsCount++;
     wins.textContent = winsCount;
     correctAnswer.innerHTML =
-      'Song "' + data[number].song + '" by ' + data[number].artist + "!";
-    musicVideo.setAttribute("src", data[number].videoURL);
+      'Song "' + data[number].song + '" by ' + data[number].artist + "!"; //displaying the set word and artist on display
+    musicVideo.setAttribute("src", data[number].videoURL); //displaying the proper video
 
-    setNewWord();
-    totalGuesses = 18;
-    pressedLetters = [];
-    guessesArray = [];
+    setNewWord(); //generating new word
+    totalGuesses = 18; //set guesses amount back to 18
+    pressedLetters = []; //clearing an array
+    guessesArray = []; //clearing an array
   } else {
     return false;
   }
 }
-remainingGuesses.textContent = totalGuesses;
+remainingGuesses.textContent = totalGuesses; //displaying total guesses amount
 
-setNewWord();
-
-let guessesArray = [];
+setNewWord(); //generate a new word
 
 window.addEventListener("keydown", event => {
   if (totalGuesses > 0) {
     if (guessesArray.includes(event.key)) {
+      //if the correct letter was already pressed, nothing happens
     } else if (!guessesArray.includes(event.key)) {
-      key.textContent = event.key;
-      letter = event.key;
-      guessesArray.push(letter);
+      //if no
+      key.textContent = event.key; // show the letter we pressed
+      letter = event.key; //set the lette'rs value to letter variable
+      guessesArray.push(letter); // push it to our array to keep track of letters that were already pressed
       totalGuesses--;
-      outputString = checkLetter(letter);
-      winTheGame(outputString);
+      outputString = checkLetter(letter); //check if the letter is in the word
+      winTheGame(outputString); // check if the word matches the string
     }
   } else {
     alert("You LOST!!!");
-    setNewWord();
-    totalGuesses = 18;
-    guessedLetters.textContent = "";
+    setNewWord(); // setting a new word, restart of the game
+    totalGuesses = 18; //setiing the count to the initial value
+    guessedLetters.textContent = ""; // clearing screen
   }
-  remainingGuesses.textContent = totalGuesses;
+  remainingGuesses.textContent = totalGuesses; //output of total guesses that can be made
 });
