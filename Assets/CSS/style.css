@@ -33,15 +33,14 @@ main {
     margin-top: 10px;
 }
 
-#play {
-    width: 50px;
-    height: 50px;
-}
-
 #start-key {
     background: -webkit-linear-gradient(#cef7f3, #a6e719);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+#play {
+    margin-top: 10px;
 }
 
 #key {

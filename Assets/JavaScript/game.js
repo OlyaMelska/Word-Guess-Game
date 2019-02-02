@@ -6,7 +6,7 @@ let key = document.getElementById("key");
 let remainingGuesses = document.getElementById("remaining-guesses");
 let guessedLetters = document.getElementById("guessed-letters");
 let correctAnswer = document.getElementById("correctAnswer");
-let play = document.getElementById("play");
+let musicVideo = document.getElementById("play");
 let word;
 let letter;
 let winsCount = 0;
@@ -17,39 +17,46 @@ let outputString = [];
 
 let data = [
   {
-    song: "Prey",
+    song: "Sweater weather",
     artist: "The Neighbourhood",
-    imgURL: "./Assets/Images/theneighbourhood.jpg"
+    imgURL: "./Assets/Images/theneighbourhood.jpg",
+    videoURL: "https://www.youtube.com/embed/GCdwKhTtNNw"
   },
   {
     song: "Californication",
     artist: "Red Hot Chili Peppers",
-    imgURL: "./Assets/Images/redhotchilipeppers.jpg"
+    imgURL: "./Assets/Images/redhotchilipeppers.jpg",
+    videoURL: "https://www.youtube.com/embed/YlUKcNNmywk"
   },
   {
     song: "Still D.R.E.",
     artist: "Dr. Dre, Snoop Dogg",
-    imgURL: "./Assets/Images/drdre.jpg"
+    imgURL: "./Assets/Images/drdre.jpg",
+    videoURL: "https://www.youtube.com/embed/_CL6n0FJZpk"
   },
   {
     song: "All eyez on me",
     artist: "2Pac",
-    imgURL: "./Assets/Images/2pack.jpg"
+    imgURL: "./Assets/Images/2pack.jpg",
+    videoURL: "https://www.youtube.com/embed/zSzaplTFagQ"
   },
   {
     song: "Young wild & free",
     artist: "Snoop Dogg",
-    imgURL: "./Assets/Images/snoopdog.jpg"
+    imgURL: "./Assets/Images/snoopdog.jpg",
+    videoURL: "https://www.youtube.com/embed/Wa5B22KAkEk"
   },
   {
     song: "High by the beach",
     artist: "Lana Del Ray",
-    imgURL: "./Assets/Images/lanadelrey.jpg"
+    imgURL: "./Assets/Images/lanadelrey.jpg",
+    videoURL: "https://www.youtube.com/embed/QnxpHIl5Ynw"
   },
   {
     song: "Kids",
     artist: "MGMT",
-    imgURL: "./Assets/Images/mgmt.jpg"
+    imgURL: "./Assets/Images/mgmt.jpg",
+    videoURL: "https://www.youtube.com/embed/GCdwKhTtNNw"
   }
 ];
 
@@ -100,6 +107,8 @@ function winTheGame(value) {
     wins.textContent = winsCount;
     correctAnswer.innerHTML =
       'Song "' + data[number].song + '" by ' + data[number].artist + "!";
+    musicVideo.setAttribute("src", data[number].videoURL);
+
     setNewWord();
     totalGuesses = 18;
     pressedLetters = [];
