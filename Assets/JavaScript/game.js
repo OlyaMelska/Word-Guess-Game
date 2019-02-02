@@ -15,6 +15,7 @@ let totalGuesses = 18;
 let pressedLetters = [];
 let string = [];
 let outputString = [];
+let guessesArray = [];
 
 let data = [
   {
