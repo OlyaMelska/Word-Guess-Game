@@ -11,15 +11,29 @@
       crossorigin="anonymous"
     />
     <link href="Assets/CSS/style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Julius+Sans+One"
+      rel="stylesheet"
+    />
     <title>West Coast Word Game</title>
     <link rel="icon" type="image/jpeg" href="./Assets/Images/icon.jpg" />
   </head>
   <body>
-    <header><h1>West Coast Game</h1></header>
+    <header>
+      <img
+        src="./Assets/Images/van.jpg"
+        alt="The van"
+        class="float-left"
+        width="200px"
+        height="200px"
+      />
+      <h3 class="float-right" id="headerTitle">West Coast Word Game</h3>
+    </header>
     <main>
       <section class="container">
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-4">
             <img
               src="./Assets/Images/icon.jpg"
               alt="game image"
@@ -28,7 +42,7 @@
             />
           </div>
 
-          <div class="col-lg-6">
+          <div class="col-lg-4">
             <h2 id="start-key">Press any key to get started</h2>
             <h4>Wins <span id="wins"></span></h4>
             <h4>Current Word</h4>
@@ -45,8 +59,12 @@
             </h3>
           </div>
         </div>
+        <div class="col-lg-2"></div>
       </section>
     </main>
+    <div>
+      <img src="./Assets/Images/palm.png" alt="palm tree" id="cornerImage" />
+    </div>
     <footer id="copyright">copyright&copy;2019</footer>
     <script src="Assets/JavaScript/game.js"></script>
     <script

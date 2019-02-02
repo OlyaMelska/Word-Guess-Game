@@ -1,36 +1,53 @@
 body {
-    background: lightblue;
+    background: #23a6b0;
     margin: 0;
     text-align: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Julius Sans One', sans-serif;
+    color: #f7ecda;
 }
 
-main {
-    display: block;
-    align-content: center;
-    margin-left: 200px;
-    margin-top: 50px;
+header {
+    display: inline-block;
+    height: 200px;
 }
 
-.left-box {
-    grid-row: 1;
-    grid-column: 1;
-    justify-self: center;
-    border: 2px solid red;
+#headerTitle {
+    padding-top: 6%;
+    font-size: 72px;
+    background: -webkit-linear-gradient(#a6e719, #f28e1b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+#start-key {
+    background: -webkit-linear-gradient(#cef7f3, #a6e719);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #key {
-    background: #fff;
+    background: #f7ecda;
+    color: #23a6b0;
+}
+
+#cornerImage {
+    width: 400px;
+    height: 300px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
 
 footer {
     display: flex;
     justify-content: center;
-    padding-top: 80px;
-}
-
-#copyright {
-    text-align: center;
-    height: 15%;
-    width: 18%;
-    margin: auto;
+    padding-top: 40px;
+    position: relative;
+    bottom: 0;
+    background: -webkit-linear-gradient(#a6e719, #f28e1b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

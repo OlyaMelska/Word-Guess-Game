@@ -1,4 +1,5 @@
 let startKey = document.getElementById("start-key");
+let image = document.getElementById("image");
 let wins = document.getElementById("wins");
 let displayWord = document.getElementById("word");
 let key = document.getElementById("key");
@@ -7,42 +8,55 @@ let guessedLetters = document.getElementById("guessed-letters");
 let word;
 let letter;
 let winsCount = 0;
-let totalGuesses = 12;
+let totalGuesses = 18;
 let pressedLetters = [];
 let string = [];
 let outputString = [];
 
 let data = [
   {
-    song: "Mama",
+    song: "Pray",
     artist: "The Neighbourhood",
-    imgURL: "../Images/theneighbourhood.jpg"
+    imgURL: "./Assets/Images/theneighbourhood.jpg"
   },
   {
-    song: "Father",
+    song: "Californication",
     artist: "Red Hot Chili Peppers",
-    imgURL: "../Images/redhotchilipeppers.jpg"
+    imgURL: "./Assets/Images/redhotchilipeppers.jpg"
   },
   {
-    song: "friend",
+    song: "Still D.R.E.",
     artist: "Dr. Dre, Snoop Dogg",
-    imgURL: "../Images/drdre.jpeg"
+    imgURL: "./Assets/Images/drdre.jpg"
   },
   {
-    song: "cat",
+    song: "All eyez on me",
     artist: "2Pac",
-    imgURL: "../Images/2pack.jpg"
+    imgURL: "./Assets/Images/2pack.jpg"
+  },
+  {
+    song: "Young wild & free",
+    artist: "Snoop Dogg",
+    imgURL: "./Assets/Images/snoopdog.jpg"
+  },
+  {
+    song: "High by the Beach",
+    artist: "Lana Del Ray",
+    imgURL: "./Assets/Images/lanadelrey.jpg"
+  },
+  {
+    song: "Kids",
+    artist: "MGMT",
+    imgURL: "./Assets/Images/mgmt.jpg"
   }
 ];
-// for (let item of data) {
-//   console.log(item.artist);
-// }
 
 let generateRandom = value => Math.floor(Math.random() * value); // function that generates a random number - that would be an index of an object in our array "data"
 
 function setNewWord() {
   number = generateRandom(data.length);
   word = data[number].song;
+  image.setAttribute("src", data[number].imgURL);
   console.log(word);
   string = [""];
 
@@ -51,6 +65,7 @@ function setNewWord() {
   }
   displayWord.textContent = string.join("");
   guessedLetters.textContent = "";
+
   console.log(displayWord);
 }
 setNewWord();
