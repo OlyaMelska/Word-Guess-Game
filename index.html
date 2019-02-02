@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
     <link href="Assets/CSS/style.css" rel="stylesheet" />
     <title>West Coast Word Game</title>
     <link rel="icon" type="image/jpeg" href="./Assets/Images/icon.jpg" />
@@ -12,31 +18,51 @@
     <header><h1>West Coast Game</h1></header>
     <main>
       <section class="container">
-        <div class="left-box">
-          <div>
-            <img src="./Assets/Images/icon.jpg" alt="game image" id="image" />
+        <div class="row">
+          <div class="col-lg-6">
+            <img
+              src="./Assets/Images/icon.jpg"
+              alt="game image"
+              class="img-fluid"
+              id="image"
+            />
           </div>
-        </div>
 
-        <div class="right-box">
-          <h2 id="start-key">Press any key to get started</h2>
-          <h4>Wins <span id="wins"></span></h4>
-          <h4>Current Word</h4>
-          <p id="word"></p>
+          <div class="col-lg-6">
+            <h2 id="start-key">Press any key to get started</h2>
+            <h4>Wins <span id="wins"></span></h4>
+            <h4>Current Word</h4>
+            <p id="word"></p>
 
-          <h1 id="key"></h1>
-          <h3>
-            Number of guesses remaining<br /><span
-              id="remaining-guesses"
-            ></span>
-          </h3>
-          <h3>
-            Letters already guessed <br /><span id="guessed-letters"></span>
-          </h3>
+            <h1 id="key"></h1>
+            <h3>
+              Number of guesses remaining<br /><span
+                id="remaining-guesses"
+              ></span>
+            </h3>
+            <h3>
+              Letters already guessed <br /><span id="guessed-letters"></span>
+            </h3>
+          </div>
         </div>
       </section>
     </main>
-    <footer>copyright&copy;2019</footer>
+    <footer id="copyright">copyright&copy;2019</footer>
     <script src="Assets/JavaScript/game.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
