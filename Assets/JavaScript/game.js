@@ -97,9 +97,10 @@ function checkLetter(letter) {
       displayWord.textContent = string.join("");
       letterIndex = word.indexOf(letter, letterIndex + 1);
     }
-    alreadyPressedLetters(letter); //output of the correctly guessed letters
+    //output of the correctly guessed letters
     return string; //returns an array to check with initially generated word
   } else {
+    alreadyPressedLetters(letter);
     return false;
   }
 }
@@ -151,6 +152,9 @@ window.addEventListener("keydown", event => {
     alert("You LOST!!!");
     setNewWord(); // setting a new word, restart of the game
     totalGuesses = 18; //setiing the count to the initial value
+    guessesArray = [];
+    pressedLetters = [];
+    key.textContent = "";
     guessedLetters.textContent = ""; // clearing screen
   }
   remainingGuesses.textContent = totalGuesses; //output of total guesses that can be made
