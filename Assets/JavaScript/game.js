@@ -155,6 +155,8 @@ window.addEventListener("keydown", event => {
     guessesArray = [];
     pressedLetters = [];
     key.textContent = "";
+    winsCount = 0;
+    wins.textContent = "";
     guessedLetters.textContent = ""; // clearing screen
   }
   remainingGuesses.textContent = totalGuesses; //output of total guesses that can be made
